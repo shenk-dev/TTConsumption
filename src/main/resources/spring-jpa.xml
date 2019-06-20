@@ -39,11 +39,10 @@
         </property>
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-                <!-- 自动建表 -->
-                <property name="generateDdl" value="false" />
-                <property name="database" value="MYSQL" />
-                <property name="databasePlatform" value="org.hibernate.dialect.MySQL5Dialect" />
-                <property name="showSql" value="true" />
+                <property name="database" value="MYSQL"></property>
+                <property name="generateDdl" value="false"></property>
+                <property name="showSql" value="true"></property>
+                <property name="databasePlatform" value="org.hibernate.dialect.MySQL5InnoDBDialect"></property>
             </bean>
         </property>
         <property name="jpaDialect">
@@ -91,6 +90,6 @@
     </bean>
 
     <!-- 启动对@AspectJ（面向切面）注解的支持 -->
-    <!--<aop:aspectj-autoproxy/>-->
+    <aop:aspectj-autoproxy/>
 
 </beans>
