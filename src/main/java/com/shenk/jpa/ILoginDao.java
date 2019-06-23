@@ -1,9 +1,9 @@
 package com.shenk.jpa;
 
-import com.shenk.common.BaseDao;
 import com.shenk.entity.User;
+import org.springframework.data.repository.CrudRepository;
 
-public interface IUserDao extends BaseDao<User, String> {
+public interface ILoginDao extends CrudRepository<User, String> {
 
     Long countByUserNameAndDelFlag(String userName, String delFlag);
 

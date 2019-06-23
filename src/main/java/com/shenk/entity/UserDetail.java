@@ -4,10 +4,7 @@ import com.shenk.common.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "tbl_user_detail")
@@ -17,9 +14,6 @@ public class UserDetail extends BaseEntity {
 
     @Id
     private String id;
-
-    @Column(name = "user_id")
-    private String userId;
 
     @Column(name = "sex")
     private String sex;
@@ -32,4 +26,9 @@ public class UserDetail extends BaseEntity {
 
     @Column(name = "comment")
     private String comment;
+
+    @OneToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;
+
 }

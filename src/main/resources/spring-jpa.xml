@@ -58,7 +58,7 @@
     <!-- 开启事务注解 -->
     <tx:annotation-driven transaction-manager="transactionManager" />
 
-    <!-- 重要配置：启用扫描并自动创建代理的功能  -->
+        <!-- 重要配置：启用扫描并自动创建代理的功能  -->
     <jpa:repositories base-package="com.shenk.jpa" transaction-manager-ref="transactionManager" entity-manager-factory-ref="entityManagerFactory"/>
 
     <!-- 数据源配置,使用应用内的DBCP数据库连接池 -->

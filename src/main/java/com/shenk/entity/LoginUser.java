@@ -4,13 +4,16 @@ import com.shenk.common.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="tbl_user")
 @Getter
 @Setter
-public class User extends BaseEntity {
+public class LoginUser extends BaseEntity {
 
     @Id
     private String id;
@@ -20,7 +23,4 @@ public class User extends BaseEntity {
 
     @Column(name = "password")
     private String password;
-
-    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
-    private UserDetail userDetail;
 }
